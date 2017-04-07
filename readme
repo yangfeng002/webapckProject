@@ -9,7 +9,17 @@ webpack是用于现代JavaScript应用程序的模块绑定器。
 
 
 3.环境如何搭建？
+  简单操作：
+       mkdir webpack-demo && cd webpack-demo
+       npm init -y
+       npm install --save-dev webpack
+
   1）安装nodejs环境，下载nodejs安装 ，使用npm包管理器来进行如下的安装
+     删除node module操作：
+       步骤一： npm install -g rimraf
+       使用 cd xxx[include node_modules folder]  切换到某个目录下
+       步骤二：rimraf  node_modules
+
   2）安装webpack
       npm install webpack -g  //全局安装
       npm install webpack --save-dev  //项目依赖安装
@@ -29,7 +39,7 @@ webpack是用于现代JavaScript应用程序的模块绑定器。
          npm install --save -dev css-loader style-loader
          npm install --save -dev sass-loader
          npm install --save -dev node-sass-loader
-         npm install --save -dev  less-loader
+         npm install --save -dev  less-loader/npm install --save -only  less-loader
          npm install autoprefixer -g；
          npm install autoprefixer postcss-loader --save--dev
 
@@ -66,3 +76,8 @@ webpack是用于现代JavaScript应用程序的模块绑定器。
 
 5.webpack.config.js(配置文件)
   请注意，在整个配置中，我们使用Node的内置路径模块，并将其前缀为__dirname全局。这可以防止操作系统之间的文件路径问题，并允许相对路径按预期工作
+
+
+
+
+
