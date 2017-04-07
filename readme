@@ -1,0 +1,67 @@
+问题：
+
+1.webpack是什么？
+webpack是用于现代JavaScript应用程序的模块绑定器。
+简单的说就是打包工具，将一些scss、less、jsx 、es6语法的文件进行编码转义打包成浏览器识别的资源文件
+
+2.webpack关注的点是什么？
+四核心概念：入门，输出，加载程序和插件
+
+
+3.环境如何搭建？
+  1）安装nodejs环境，下载nodejs安装 ，使用npm包管理器来进行如下的安装
+  2）安装webpack
+      npm install webpack -g  //全局安装
+      npm install webpack --save-dev  //项目依赖安装
+
+     npm init  //初始化npm配置文件
+     npm init -y：初始化一个package.json文件，加上-y就会默认生成该文件，无需一步一步填写；
+     npm docs 包名：查看包的文档；npm install：安装package.json中dependencies属性中所有依赖的包
+
+  3）安装webpack服务器（可以不用修改模块后浏览器自动刷新等）
+        npm install webpack-dev-server -g  //全局安装
+        npm install --save-dev webpack-dev-server //项目依赖
+       //启动服务
+       webpack-dev-server --progress --colors  可以实时刷新
+
+  4）安装loader加载器
+         处理相关css文件的
+         npm install --save -dev css-loader style-loader
+         npm install --save -dev sass-loader
+         npm install --save -dev node-sass-loader
+         npm install --save -dev  less-loader
+         npm install autoprefixer -g；
+         npm install autoprefixer postcss-loader --save--dev
+
+        处理相关js的
+         npm install --save-dev babel-core babel-loader babel-preset-es2015 babel-preset-react jsx-loader
+
+        处理相关图片的
+         npm install --save-dev url-loader
+
+       处理json文件的
+        npm install --save-dev json-loader
+
+       文件处理（类似字体图标库、单个图片文件等等）
+         npm install --save-dev file-loader
+
+        loaders之 html处理  raw-loader
+         npm install --save-dev raw-loader
+
+  5）安装插件
+    自动生成前端模板文件的
+         npm install html-webpack-plugin --save-dev
+    将css单独打包 这个操作很简单的，只需要一个插件就好了，就是extract-text-webpack-plugin
+           npm install extract-text-webpack-plugin --save-dev
+
+
+  4.打包
+      方式一：webpack 入口文件js 生成文件js
+      方式二：webpack (通过配置webpack.config.js文件)
+      方式三：npm start (通过配置package.json文件)
+    webpack         // 最基本的启动webpack的方法
+    webpack -w      // 提供watch方法；实时进行打包更新
+    webpack -p      // 对打包后的文件进行压缩
+    webpack -d      // 提供source map，方便调式代码
+
+
