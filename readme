@@ -1,5 +1,5 @@
+中文网址：http://www.css88.com/doc/webpack2/guides/migrating/
 问题：
-
 1.webpack是什么？
 webpack是用于现代JavaScript应用程序的模块绑定器。
 简单的说就是打包工具，将一些scss、less、jsx 、es6语法的文件进行编码转义打包成浏览器识别的资源文件
@@ -40,7 +40,7 @@ webpack是用于现代JavaScript应用程序的模块绑定器。
          npm install --save -dev sass-loader
          npm install --save -dev node-sass-loader
          npm install --save -dev  less-loader/npm install --save -only  less-loader
-         npm install autoprefixer -g；
+         npm install autoprefixer -g
          npm install autoprefixer postcss-loader --save--dev
 
         处理相关js的
@@ -49,7 +49,7 @@ webpack是用于现代JavaScript应用程序的模块绑定器。
         处理相关图片的
          npm install --save-dev url-loader
 
-       处理json文件的
+       处理json文件的(注意：webpack2.x已经不需要安装)
         npm install --save-dev json-loader
 
        文件处理（类似字体图标库、单个图片文件等等）
@@ -59,10 +59,13 @@ webpack是用于现代JavaScript应用程序的模块绑定器。
          npm install --save-dev raw-loader
 
   5）安装插件
-    自动生成前端模板文件的
+    5.1）自动生成前端模板文件的
          npm install html-webpack-plugin --save-dev
-    将css单独打包 这个操作很简单的，只需要一个插件就好了，就是extract-text-webpack-plugin
-           npm install extract-text-webpack-plugin --save-dev
+    5.2）将css单独打包 这个操作很简单的，只需要一个插件就好了，就是extract-text-webpack-plugin
+         npm install --save-dev extract-text-webpack-plugin
+    5.3）压缩依赖的插件：
+     npm install --save-dev compression-webpack-plugin
+
 
 
   4.打包

@@ -6,5 +6,14 @@
    path.resolve([from ...], to)
    将 to 参数解析为绝对路径。
 2、全局安装webpack位置
-
    C:\Users\fengyang\AppData\Roaming\npm\node_modules
+
+3.了解2.x版本有哪些修改？？
+ 1）resolve属性 可以更好地解析，加快打包时间
+ 2)module属性  module.rules
+ 3)
+
+4.目录详解
+  src:为源文件目录
+  dist:生成的目录
+  vendor为第三方的目录文件
