@@ -15,5 +15,23 @@
 
 4.目录详解
   src:为源文件目录
-  dist:生成的目录
+  build或者dist:生成的目录
   vendor为第三方的目录文件
+
+5.怎么实现第三方库、工具和应用程序本身的代码分离？？？
+  在文件输出的时候采用chunkhash
+  参考： https://www.npmjs.com/package/assets-webpack-plugin
+
+
+6.使用package.json控制开发和生成环境下使用不同的命令
+   npm run dev  配置了webpack.config.dev.js
+   npm run prod 配置了webpack.config.pro.js
+
+7.常用的插件列举：
+  1）UglifyJS Webpack Plugin  代码压缩（它和 webpack 核心插件 (webpack.optimize.UglifyJSPlugin) 是同一个插件） 直接在plugins中写入new webpack.optimize.UglifyJsPlugin()
+  2）ProvidePlugin     new webpack.ProvidePlugin({$: 'jquery',jQuery: 'jquery'})
+  3)HtmlWebpackPlugin 需要安装，用来生成html页面模板文件
+  4）CommonsChunkPlugin 提取公共的模块文件
+
+
+
