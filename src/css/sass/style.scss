@@ -1,0 +1,12 @@
+@import "common";
+.icon-title{
+  width: 268px;
+  height: 268px;
+  background:url("../../images/git.jpg") no-repeat;
+  max-width: 100%;
+}
+ul li:first-child{
+  width: 50px;
+  height:50px;
+  background: url("../../images/fx.png");
+}

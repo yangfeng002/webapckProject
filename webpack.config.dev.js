@@ -59,13 +59,11 @@ module.exports = function(env) {
             new webpack.DefinePlugin({
                 'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
                 'process.env.DEBUG': JSON.stringify(process.env.DEBUG)
-            }),
+            })
 
         ],
         resolve: {
-            alias: {
-                jquery: "./vendor/jquery.js"//引用本地的第三方库
-            }
+
         },
         externals: {//不将第三方文件打包到生成的文件中
             "lodash": {

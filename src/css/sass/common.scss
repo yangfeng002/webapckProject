@@ -1,0 +1,53 @@
+@charset "UTF-8";
+/* 声明变量 预定义 在其他地方可以调用 */
+
+$baseFontSize:12px !default;
+$baseLineHeight:2;//用于覆盖默认变量的
+$baseLineHeight:1.5 !default;//默认变量
+$borderDirection:top !default;//可以用于属性和css的变量（特殊变量）
+
+$margin:5px 10px 12px 10px;//list类似于数组
+$px: (5px 10px) (20px 30px);
+$linkColor:#08c #333 !default;//采用nth($var,$index)方式取值
+
+$headings: (h1: 2em, h2: 1.5em, h3: 1.2em);//类似与对象
+
+body{
+  font-family: iconfont;
+  font:#{$baseFontSize}/#{$baseLineHeight};
+  background: #eee;
+}
+.border-#{$borderDirection}{
+  border-#{$borderDirection}:1px solid #ccc;
+}
+a{
+  color: nth($linkColor,1);
+  margin:nth($margin,1) nth($margin,3);
+  //margin:nth($px,1) nth($px,2);
+  &:hover{
+    color:nth($linkColor,2);
+  }
+}
+
+//循环动态展示
+@each $header,$index in $headings{
+   #{$header}{
+      font-size: $index;
+   }
+}
+//嵌套使用
+ul{
+  li{
+    list-style: none;
+    &:hover{
+      color: #00ee00;
+    }
+  }
+}
+//跳出嵌套 @root{ }
+.parent-2 {
+  color:#f00;
+  @at-root .child {
+    width:200px;
+  }
+}

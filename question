@@ -1,11 +1,13 @@
-一、
-1、关于require("path")的疑惑？？？
+一、总结的相关问题
+
+Q1、关于require("path")的疑惑？？？
    path是nodejs内置的package
    path.join([path1][, path2][, ...])
    用于连接路径。该方法的主要用途在于，会正确使用当前系统的路径分隔符，Unix系统是/，Windows系统是\。
    path.resolve([from ...], to)
    将 to 参数解析为绝对路径。
-2、全局安装webpack位置
+
+@2、webpack全局安装的位置在哪里？
    C:\Users\fengyang\AppData\Roaming\npm\node_modules
 
 3.了解2.x版本有哪些修改？？
@@ -13,25 +15,48 @@
  2)module属性  module.rules
  3)
 
-4.目录详解
+Q4.目录详解
   src:为源文件目录
   build或者dist:生成的目录
   vendor为第三方的目录文件
 
-5.怎么实现第三方库、工具和应用程序本身的代码分离？？？
+Q5.怎么实现第三方库、工具和应用程序本身的代码分离？？？
   在文件输出的时候采用chunkhash
   参考： https://www.npmjs.com/package/assets-webpack-plugin
 
 
-6.使用package.json控制开发和生成环境下使用不同的命令
+Q6.使用package.json控制开发和生成环境下使用不同的命令
    npm run dev  配置了webpack.config.dev.js
    npm run prod 配置了webpack.config.pro.js
 
-7.常用的插件列举：
+Q7.常用的插件有哪些？
   1）UglifyJS Webpack Plugin  代码压缩（它和 webpack 核心插件 (webpack.optimize.UglifyJSPlugin) 是同一个插件） 直接在plugins中写入new webpack.optimize.UglifyJsPlugin()
   2）ProvidePlugin     new webpack.ProvidePlugin({$: 'jquery',jQuery: 'jquery'})
   3)HtmlWebpackPlugin 需要安装，用来生成html页面模板文件
   4）CommonsChunkPlugin 提取公共的模块文件
+
+Q8:团队合作如何管理相关文件呢,node_modules需要上传吗?,package.json是不是可以自动依赖上呢？
+   ---利用package.json管理你的npm包
+  1、项目初始化的时候使用npm init初始化package.json配置文件；
+  2、package.json里面有两个字段devDependencies和dependencies两个字段分别表示开发环境需要的npm包和部署环境需要的npm包。
+  3、同步代码的时候大家只需要同步一下package.json文件，然后执行npm install命令，npm会自动检索package.json中的配置，安装相应的node_modules。
+  这里给出我的一个项目的package.json的相应字段；
+    "dependencies": {},
+    "devDependencies": {
+      "babel-preset-es2015": "^6.6.0",
+      "gulp": "^3.9.1",
+      "gulp-babel": "^6.1.2",
+      "gulp-concat": "^2.6.0",
+      "gulp-connect": "^2.3.1",
+      "gulp-minify-css": "^1.2.3",
+      "gulp-sass": "^2.1.1",
+      "gulp-uglify": "^1.5.1",
+      "shelljs": "^0.7.0"
+    }
+  可以看到npm包名和版本号都有记录，这样能保证大家的环境统一。最后，负责项目基础配置的人在初始化项目时：
+
+  使用npm install命令时添加--save，会自动去package.json中的dependencies下添加相应的包名和版本。
+  使用npm install命令时添加--save-dev，会自动去package.json中的devDependencies下添加相应的包名和版本。
 
 
 

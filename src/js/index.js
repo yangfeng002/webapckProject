@@ -6,10 +6,7 @@ require('../css/style.css');
 //console.log(moment().format());
 console.log("缓存机制");
 require("jquery");
-$("#main").html("hello webpack");
-if (process.env.NODE_ENV === 'production') {
-    console.log('Welcome to production');
-}
-if (process.env.DEBUG) {
-    console.log('Debugging output');
-}
+$(function(){
+    $("#main").html("hello webpack");
+});
+

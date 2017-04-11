@@ -42,15 +42,15 @@ webpack是用于现代JavaScript应用程序的模块绑定器。
   4）安装loader加载器
          处理相关css文件的
          npm install --save -dev css-loader style-loader
-         npm install --save -dev sass-loader(保证已经安装了sass)
-         npm install --save -dev node-sass-loader
+         npm install --save -dev sass-loader(保证已经安装了node-sass)
          npm install --save -dev  less-loader(保证已经安装了less)
-         npm install autoprefixer -g
-         npm install autoprefixer postcss-loader --save--dev
+         npm install autoprefixer -g(autoprefixer是postcss的插件)
+         npm install --save--dev autoprefixer
+         npm install --save--dev  postcss-loader
 
         处理相关js的
          npm install --save-dev babel-core babel-loader babel-preset-es2015 babel-preset-react jsx-loader
-         npm install babel-loader babel-core babel-preset-es2015 --save-dev
+         、、npm install babel-loader babel-core babel-preset-es2015 --save-dev
         处理相关图片的
          npm install --save-dev url-loader
 
