@@ -24,6 +24,8 @@ webpack是用于现代JavaScript应用程序的模块绑定器。
        步骤一： npm install -g rimraf
        使用 cd xxx[include node_modules folder]  切换到某个目录下
        步骤二：rimraf  node_modules
+      npm cache clean
+     卸载操作：npm uninstall [name]
 
   2）安装webpack
       npm install webpack -g  //全局安装
@@ -41,26 +43,31 @@ webpack是用于现代JavaScript应用程序的模块绑定器。
 
   4）安装loader加载器
          处理相关css文件的
-         npm install --save -dev css-loader style-loader
-         npm install --save -dev sass-loader(保证已经安装了node-sass)
-         npm install --save -dev  less-loader(保证已经安装了less)
+         npm install --save-dev css-loader
+         npm install --save-dev style-loader
+         npm install --save-dev sass-loader(保证已经安装了node-sass)
+         npm install --save-dev  less-loader(保证已经安装了less)
          npm install autoprefixer -g(autoprefixer是postcss的插件)
-         npm install --save--dev autoprefixer
-         npm install --save--dev  postcss-loader
+         npm install --save-dev autoprefixer
+         npm install --save-dev  postcss-loader
 
         处理相关js的
-         npm install --save-dev babel-core babel-loader babel-preset-es2015 babel-preset-react jsx-loader
-         、、npm install babel-loader babel-core babel-preset-es2015 --save-dev
+         npm install --save-dev babel-core
+         npm install --save-dev babel-loader
+         npm install --save-dev babel-preset-es2015
+         npm install --save-dev babel-preset-react
+         npm install --save-dev jsx-loader
+
         处理相关图片的
          npm install --save-dev url-loader
 
        处理json文件的(注意：webpack2.x已经不需要安装)
-        npm install --save-dev json-loader
+        //npm install --save-dev json-loader(webpack1.x需要安装)
 
        文件处理（类似字体图标库、单个图片文件等等）
          npm install --save-dev file-loader
 
-        loaders之 html处理  raw-loadernpm install --save-dev raw-loader
+        loaders之 html处理raw-loader  npm install --save-dev raw-loader
 
 
   5）安装插件
@@ -69,7 +76,7 @@ webpack是用于现代JavaScript应用程序的模块绑定器。
     5.2）将css单独打包 这个操作很简单的，只需要一个插件就好了，就是extract-text-webpack-plugin
          npm install --save-dev extract-text-webpack-plugin
     5.3）压缩依赖的插件：
-     npm install --save-dev compression-webpack-plugin
+        npm install --save-dev compression-webpack-plugin
    5.4)
       npm install --save-dev  chunk-manifest-webpack-plugin
       npm install --save-dev webpack-chunk-hash
