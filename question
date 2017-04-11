@@ -44,19 +44,23 @@ Q8:团队合作如何管理相关文件呢,node_modules需要上传吗?,package.
     "dependencies": {},
     "devDependencies": {
       "babel-preset-es2015": "^6.6.0",
-      "gulp": "^3.9.1",
-      "gulp-babel": "^6.1.2",
-      "gulp-concat": "^2.6.0",
-      "gulp-connect": "^2.3.1",
-      "gulp-minify-css": "^1.2.3",
-      "gulp-sass": "^2.1.1",
-      "gulp-uglify": "^1.5.1",
-      "shelljs": "^0.7.0"
     }
   可以看到npm包名和版本号都有记录，这样能保证大家的环境统一。最后，负责项目基础配置的人在初始化项目时：
-
   使用npm install命令时添加--save，会自动去package.json中的dependencies下添加相应的包名和版本。
   使用npm install命令时添加--save-dev，会自动去package.json中的devDependencies下添加相应的包名和版本。
+
+Q9:项目文件打包后过大怎么优化？？
+ 1.生成环境打包时尽可能减少不必要的插件
+ 2.代码压缩（采用webpack内置插件new webpack.optimize.UglifyJsPlugin()）
+ 3.代码分割（code spliting）
+      1） 将第三方文件或者库提取出来
+      2） 将代码分离，一个module按需加载其他module（require([dependencies,function(){}])）
+ 4.代码缓存 [churnk-hash:6]
+
+Q10:第三方插件如bootstrap、layui等怎么加载？？
+
+
+
 
 
 
