@@ -60,6 +60,7 @@ webpack是用于现代JavaScript应用程序的模块绑定器。
 
         处理相关图片的
          npm install --save-dev url-loader
+         npm install --save-dev image-webpack-loader（图片压缩）
 
        处理json文件的(注意：webpack2.x已经不需要安装)
         //npm install --save-dev json-loader(webpack1.x需要安装)
@@ -83,6 +84,13 @@ webpack是用于现代JavaScript应用程序的模块绑定器。
    5.5）生成环境中将代码的插件（常用）
      npm install uglifyjs-webpack-plugin --save-dev
 
+   代码热替换：HotModuleReplacementPlugin
+   生成html文件：HtmlWebpackPlugin
+   报错但不退出webpack进程：NoErrorsPlugin
+   代码压缩：UglifyJsPlugin
+   自动打开浏览器： OpenBrowserPlugin
+   设置环境变量： DefinePlugin
+
   4.打包
       方式一：webpack 入口文件js 生成文件js
       方式二：webpack (通过配置webpack.config.js文件)
@@ -94,6 +102,13 @@ webpack是用于现代JavaScript应用程序的模块绑定器。
 
 5.webpack.config.js(配置文件)
   请注意，在整个配置中，我们使用Node的内置路径模块，并将其前缀为__dirname全局。这可以防止操作系统之间的文件路径问题，并允许相对路径按预期工作
+     entry: 入口,定义要打包的文件
+     output: 出口，定义打包输出的文件；包括路径，文件名，还可能有运行时的访问路径（publicPath）参数
+     module: webpack将所有的资源都看做是模块，而模块就需要加载器；主要定义一些loaders,定义哪些后缀名的文件应该用哪些loader
+     test: 检测哪些文件需要此loader，是一个正则表达式
+     exclude: 忽略哪些文件
+     resolve: ()定义能够被打包的文件，文件后缀名
+     plugins: 定义一些额外的插件
 
 
 

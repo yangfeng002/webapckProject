@@ -14,8 +14,8 @@ module.exports = function(env) {
         },
         output: {
             path: path.join(__dirname, "dist", "js"),
-            filename: "[name].[chunkhash].js",
-            chunkFilename: "[name].[chunkhash].js"
+            filename: "[name].[chunkhash:6].js",
+            chunkFilename: "[name].[chunkhash:6].js"
         },
         module:{
             rules:[
@@ -43,8 +43,14 @@ module.exports = function(env) {
                 manifestVariable: "webpackManifest"
             }),
             new ExtractTextPlugin('css/style.css'),
-            new webpack.optimize.UglifyJsPlugin()
-
-        ]
+            new webpack.optimize.UglifyJsPlugin({
+                compress: {
+                    warnings: false
+                }
+            })
+        ],
+        resolve:{
+            modules:[]
+        }
     }
 };
